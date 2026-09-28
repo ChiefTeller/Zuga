@@ -1,14 +1,14 @@
-Canon Registry - 82
+<b>Canon Registry - 82<b><br>
 ZG-C001
 Definition of the Updating Equation
 משוואת זוגא המתעדכנת היא אוסף של צמצומים של מבנה זוגא שמאפשרים להבין את המציאות, עצמנו, קיום ואי קיום.
-ZG-C002
+ZG-C002<br>
 Zuga Structure
 Zuga = Z = (Z1, Z2, R, τ, I, P)
-ZG-C003
+ZG-C003<br>
 Z Phenomena
 Z1 = Z Phenomenon | Z2 = Z Phenomenon
-ZG-C004
+ZG-C004<br>
 Core Components
 R = Relations | τ = Tension | I = Information
 ZG-C005
@@ -276,3 +276,4 @@ ZugaExpression∈ZGod
 ZGod≺ZugaExpression
 ZugaExpression≺ZGod
 
+](https://chiefteller.github.io/Zuga/)
