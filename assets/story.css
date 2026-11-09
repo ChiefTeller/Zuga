@@ -1,0 +1,216 @@
+/* ZUGA STORIES — modular, scroll-first cinematic reels. */
+.reel-story,.reel-framework{background:#040818}
+.reel-story:not(.is-active) .story-light-scape,.reel-story:not(.is-active) .story-orbit,.reel-story:not(.is-active) .story-geometry,.reel-framework:not(.is-active) .framework-halo{animation-play-state:paused}
+.story-reel,.framework-visual{position:relative;width:100%;height:100%;min-height:100%;overflow:hidden;isolation:isolate;display:grid;place-items:center;direction:rtl;--scene-1:rgba(35,111,213,.26);--scene-2:rgba(129,72,232,.23);--scene-3:rgba(66,199,241,.18);--scene-edge:#8fc8ff}
+.story-reel::after,.framework-visual::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,5,16,.15),rgba(1,4,15,.07) 48%,rgba(2,5,16,.36)),linear-gradient(0deg,rgba(0,0,0,.25),transparent 22%,transparent 82%,rgba(0,0,0,.17))}
+.story-light-scape{position:absolute;inset:-15%;pointer-events:none;background:radial-gradient(ellipse 50% 45% at 76% 43%,var(--scene-1),transparent 78%),radial-gradient(ellipse 40% 48% at 20% 20%,var(--scene-2),transparent 82%),radial-gradient(ellipse 60% 38% at 55% 88%,var(--scene-3),transparent 82%);animation:story-light-motion 12s ease-in-out infinite alternate;filter:saturate(1.3)}
+.story-geometry{position:absolute;inset-inline-start:6%;top:8%;width:min(68vw,870px);aspect-ratio:1;border-radius:50%;background:repeating-conic-gradient(from 14deg,transparent 0deg 13deg,rgba(197,224,255,.16) 13.6deg 13.8deg,transparent 14.8deg 26deg),repeating-radial-gradient(circle,transparent 0 38px,rgba(164,213,255,.10) 39px 40px,transparent 41px 79px);mask-image:radial-gradient(circle,black 12%,black 53%,transparent 73%);opacity:.85;animation:story-geo-spin 85s linear infinite}
+.story-glyph{position:absolute;inset-inline-start:8%;top:50%;transform:translateY(-50%);direction:ltr;white-space:nowrap;font:700 clamp(180px,28vw,470px)/1 "Space Grotesk",sans-serif;letter-spacing:-.06em;color:var(--scene-edge);opacity:.12;text-shadow:0 0 90px var(--scene-edge);user-select:none}
+.story-orbit{position:absolute;inset-inline-start:8%;top:50%;width:min(59vw,700px);aspect-ratio:1;transform:translateY(-50%) rotate(-30deg);border:1px solid color-mix(in srgb,var(--scene-edge) 32%,transparent);border-radius:50%;box-shadow:0 0 56px var(--scene-2),inset 0 0 80px var(--scene-1);opacity:.55;animation:story-orbit-a 13s ease-in-out infinite alternate}
+.story-orbit--b{width:min(34vw,420px);inset-inline-start:17%;transform:translateY(-50%) rotate(40deg);border-style:dashed;border-color:color-mix(in srgb,var(--scene-edge) 26%,transparent);animation-duration:17s;animation-direction:alternate-reverse}
+.story-content{position:relative;z-index:2;width:min(100%,1200px);padding:110px clamp(48px,8vw,126px) 122px;text-align:right;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0}
+.story-kicker{margin:0 0 23px;display:flex;align-items:center;gap:10px;direction:rtl;color:var(--scene-edge);font:700 clamp(10px,1.05vw,13px)/1.4 "Space Grotesk","Heebo",sans-serif;letter-spacing:.13em;text-shadow:0 0 18px var(--scene-2)}
+.story-kicker:before{content:"";width:25px;height:1px;background:var(--scene-edge);box-shadow:0 0 12px var(--scene-edge)}
+.story-kicker span{opacity:.4}
+.story-title,.framework-title{max-width:900px;margin:0 0 22px;font-size:clamp(41px,5.8vw,86px);font-weight:700;line-height:1.12;letter-spacing:-.045em;text-wrap:balance;background:linear-gradient(120deg,#fff 0%,#d6e9ff 53%,#94c9ff 96%);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 20px rgba(107,174,255,.18))}
+.story-hook{max-width:810px;margin:0 0 17px;color:#f2f6ff;font-size:clamp(20px,2.35vw,29px);font-weight:600;line-height:1.42}
+.story-body{max-width:740px;margin:0 0 20px;color:#c5d4ec;font-size:clamp(15px,1.6vw,21px);line-height:1.68;white-space:normal}
+.story-reveal{max-width:810px;margin:0 0 18px;border-right:3px solid var(--scene-edge);padding:12px 18px 12px 0;color:#fff8ed;background:linear-gradient(270deg,color-mix(in srgb,var(--scene-edge) 14%,transparent),transparent 85%);font-size:clamp(18px,1.95vw,27px);font-weight:650;line-height:1.46;text-shadow:0 0 24px rgba(175,214,255,.28)}
+.story-connection{font-size:clamp(11px,1.1vw,14px);line-height:1.55;color:#96b9df;margin:0 0 20px;max-width:700px}
+.story-source{margin-top:10px;display:flex;align-items:center;gap:14px 26px;flex-wrap:wrap;max-width:760px}
+.story-source-meta{display:flex;flex-direction:column;gap:3px;color:#d9e6f6;font-size:13px;font-weight:700}
+.story-source-meta small{color:#9fb2cd;font-size:11px;font-weight:400}
+.source-pill{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border:1px solid color-mix(in srgb,var(--scene-edge,#98b9ef) 53%,transparent);background:rgba(9,22,41,.62);color:#edf5ff;border-radius:999px;text-decoration:none;font-size:12px;font-weight:600;box-shadow:0 0 18px rgba(109,173,246,.13);backdrop-filter:blur(12px);transition:transform .22s,border-color .22s,background .22s}
+.source-pill:hover{transform:translateY(-2px);background:rgba(24,53,94,.84);border-color:#fff}
+.story-editorial{margin-top:16px;max-width:750px;color:#bbc8dc;font-size:11px}
+.story-editorial summary{cursor:pointer;list-style:none;color:#93b2d5;border-bottom:1px dashed #6b89ae90;display:inline-block}
+.story-editorial summary::-webkit-details-marker{display:none}
+.story-editorial p{margin:8px 0 0;line-height:1.6;max-width:640px}
+.reel-story.is-active .story-title{animation:story-title-in .85s both}
+.reel-story.is-active .story-hook{animation:story-rise .8s .12s both}
+.reel-story.is-active .story-body{animation:story-rise .8s .25s both}
+.reel-story.is-active .story-reveal{animation:story-rise .8s .38s both}
+.reel-story.is-active .story-source{animation:story-rise .8s .53s both}
+/* Individual cinematic palettes and distinct background treatments. */
+.story--network{--scene-1:rgba(18,135,230,.43);--scene-2:rgba(58,117,223,.17);--scene-3:rgba(31,187,211,.24);--scene-edge:#87dcff}
+.story--pulse{--scene-1:rgba(240,73,144,.24);--scene-2:rgba(120,72,227,.33);--scene-3:rgba(30,139,233,.20);--scene-edge:#ffb4cf}
+.story--portal{--scene-1:rgba(48,184,187,.30);--scene-2:rgba(18,129,240,.24);--scene-3:rgba(127,221,174,.17);--scene-edge:#8cffe0}
+.story--silence{--scene-1:rgba(15,83,158,.22);--scene-2:rgba(66,116,180,.11);--scene-3:rgba(58,109,144,.09);--scene-edge:#a9cef9}
+.story--silence .story-geometry{opacity:.4;animation-duration:120s}
+.story--mirror{--scene-1:rgba(192,139,245,.32);--scene-2:rgba(53,107,220,.23);--scene-3:rgba(89,190,211,.13);--scene-edge:#d5bcff}
+.story--tide{--scene-1:rgba(15,176,179,.34);--scene-2:rgba(40,93,172,.23);--scene-3:rgba(63,239,175,.14);--scene-edge:#a0ffe7}
+.story--dawn{--scene-1:rgba(246,161,66,.32);--scene-2:rgba(235,104,74,.18);--scene-3:rgba(146,105,221,.22);--scene-edge:#ffdfa9}
+.story--storm{--scene-1:rgba(106,102,219,.38);--scene-2:rgba(29,168,226,.29);--scene-3:rgba(221,137,182,.12);--scene-edge:#c1bcff}
+.story--void{--scene-1:rgba(46,164,224,.14);--scene-2:rgba(21,63,159,.19);--scene-3:rgba(79,152,178,.10);--scene-edge:#d1ebff}
+.story--void .story-geometry{mask-image:radial-gradient(circle,transparent 0 23%,black 31% 53%,transparent 68%)}
+.story--genesis{--scene-1:rgba(224,159,69,.25);--scene-2:rgba(89,133,245,.32);--scene-3:rgba(119,186,255,.19);--scene-edge:#f4d8a0}
+.story--flow{--scene-1:rgba(30,190,184,.23);--scene-2:rgba(51,96,168,.22);--scene-3:rgba(103,243,200,.19);--scene-edge:#a6fce6}
+.story--pendulum{--scene-1:rgba(241,137,92,.22);--scene-2:rgba(83,113,225,.26);--scene-3:rgba(176,98,208,.18);--scene-edge:#f0b9d6}
+.story--systems{--scene-1:rgba(71,115,240,.29);--scene-2:rgba(36,202,221,.26);--scene-3:rgba(164,140,252,.16);--scene-edge:#9bddff}
+/* Framework reel: first in the new series. */
+.framework-visual{background:radial-gradient(ellipse at 68% 18%,rgba(48,125,239,.24),transparent 47%),radial-gradient(ellipse at 19% 82%,rgba(148,74,237,.19),transparent 47%),#060a1a}
+.framework-halo{position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-radial-gradient(ellipse at 58% 54%,transparent 0 66px,rgba(120,194,255,.08) 67px 69px,transparent 70px 135px);mask-image:radial-gradient(ellipse at center,black 15%,transparent 76%);animation:framework-breathe 13s ease-in-out infinite alternate}
+.framework-content{position:relative;z-index:2;max-width:1050px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;padding:104px 42px 116px}
+.framework-title{font-size:clamp(40px,5vw,70px);margin-bottom:10px}
+.framework-hook{font-size:clamp(17px,2vw,24px);margin:0 0 22px;color:#dae8ff}
+.framework-components{width:min(100%,740px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(7px,2vw,25px);margin:3px auto 18px}
+.framework-component{border:0;background:none;color:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:11px;min-width:0;padding:8px 0}
+.framework-symbol{display:grid;place-items:center;width:clamp(67px,8vw,105px);aspect-ratio:1;border-radius:50%;font:700 clamp(30px,4vw,47px)/1 "Space Grotesk",sans-serif;background:radial-gradient(circle at 28% 20%,#f4faff,#87b8ed 24%,#1c3973 60%,#10132c 100%);box-shadow:inset -9px -14px 24px #08132cbe,0 0 0 1px #c3ebff6b,0 0 32px #6ab0ff55;transition:transform .3s,box-shadow .3s}
+.framework-component:nth-child(2) .framework-symbol{background:radial-gradient(circle at 28% 20%,#fff3d9,#f1b87f 24%,#5c2868 64%,#171024 100%)}
+.framework-component:nth-child(3) .framework-symbol{background:radial-gradient(circle at 28% 20%,#ffe9f8,#e4a2de 24%,#59326d 64%,#171024 100%)}
+.framework-component:nth-child(4) .framework-symbol{background:radial-gradient(circle at 28% 20%,#ebffeb,#91e0c9 24%,#235f85 64%,#0c1f35 100%)}
+.framework-component[aria-pressed="true"] .framework-symbol{transform:translateY(-7px) scale(1.06);box-shadow:inset -8px -12px 26px #08132c8a,0 0 0 3px #dcf4ff,0 0 48px #91cdffc7}
+.framework-component small{color:#d5e8ff;font:600 clamp(12px,1.2vw,17px)/1.4 "Heebo",sans-serif}
+.framework-info{max-width:680px;width:100%;min-height:83px;display:grid;align-items:center;place-items:center;border:1px solid #78b0f13d;border-radius:18px;background:#07152ba8;backdrop-filter:blur(8px);padding:12px 20px}
+.framework-definition{display:none;text-align:center;margin:0;line-height:1.5;color:#c7d9f0;font-size:clamp(13px,1.35vw,18px)}
+.framework-definition.active{display:flex;flex-direction:column;gap:3px}
+.framework-definition b{color:#fff}
+.framework-motion{direction:ltr;letter-spacing:.08em;color:#c8daff;font:600 clamp(16px,2.4vw,27px)/1.5 "Space Grotesk",sans-serif;margin:22px 0 9px;text-shadow:0 0 20px #78c2ff88}
+.framework-insight{max-width:770px;color:#d2deef;font-size:clamp(12px,1.4vw,18px);line-height:1.5;margin:0 0 17px}
+.framework-source .source-pill{font-size:12px}
+/* Global navigation: a compact counter and directory instead of hundreds of dots. */
+.reel-navigation{display:flex;gap:13px;align-items:center;direction:ltr}
+.reel-current{font:700 11px/1 "Space Grotesk",sans-serif;letter-spacing:.17em;color:#e3edff;white-space:nowrap}
+.reel-directory-button{border:1px solid #b2d9ff4c;background:#08152ad8;border-radius:999px;color:#e7f2ff;padding:9px 13px;white-space:nowrap;cursor:pointer;font-size:11px;backdrop-filter:blur(15px)}
+.reel-directory-button span{opacity:.7;margin-left:4px}
+.reel-progress-line{position:fixed;z-index:22;left:0;right:0;top:var(--header);height:2px;background:#94baff17;pointer-events:none}
+.reel-progress-line span{display:block;width:4.75%;height:100%;background:linear-gradient(90deg,#668de2,#7be4ff,#f6e1aa);box-shadow:0 0 14px #81d0ff;transition:width .5s ease}
+.directory-dialog{border:1px solid #9bc8ef52;background:radial-gradient(circle at 70% 0%,#152e55,#071225 45%,#050811 100%);color:#f1f8ff;border-radius:24px;width:min(620px,calc(100vw - 32px));max-height:min(82dvh,830px);padding:24px 27px;box-shadow:0 35px 130px #000d;overflow:hidden}
+.directory-dialog::backdrop{background:#01040bdc;backdrop-filter:blur(9px)}
+.directory-header{display:flex;align-items:start;justify-content:space-between;margin-bottom:17px}
+.directory-header h2{margin:3px 0 0;font-size:30px;font-weight:700}
+.directory-kicker{font-size:10px;letter-spacing:.22em;color:#8bcaff}
+.directory-close{background:transparent;border:1px solid #91b1d45a;color:white;border-radius:50%;font-size:27px;line-height:1;width:36px;height:36px;cursor:pointer}
+.directory-dialog label{display:block;color:#b3cdec;font-size:12px;margin-bottom:7px}
+.directory-dialog input{width:100%;border:1px solid #8dbde855;border-radius:14px;background:#051021;color:white;padding:13px 15px;font:inherit;margin-bottom:16px}
+.directory-list{max-height:min(52dvh,540px);overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#5286b6 transparent;display:flex;flex-direction:column;gap:7px}
+.directory-item{display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:12px;text-decoration:none;border:1px solid #bfdcff24;border-radius:12px;background:#0c1b32aa;padding:11px 12px;min-width:0}
+.directory-item:hover,.directory-item:focus-visible{background:#173559;border-color:#8bc9ff8a}
+.directory-item>span{font:700 10px "Space Grotesk",sans-serif;letter-spacing:.09em;color:#7cbaf1}
+.directory-item strong{font-size:13px;line-height:1.35;font-weight:600}
+.directory-item small{font-size:10px;color:#a8bfda;white-space:nowrap}
+.directory-empty{font-size:13px;color:#c8d8ed}
+@keyframes story-light-motion{0%{transform:scale(1) translate(0,0) rotate(0deg)}100%{transform:scale(1.14) translate(-1.8%,2.5%) rotate(4deg)}}
+@keyframes story-geo-spin{to{transform:rotate(360deg)}}
+@keyframes story-orbit-a{to{transform:translateY(-50%) rotate(8deg) scale(1.07)}}
+@keyframes framework-breathe{to{opacity:.47;transform:scale(1.08)}}
+@keyframes story-title-in{from{opacity:0;transform:translateY(44px) scale(.98);filter:blur(8px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes story-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+/* Keep the whole thought legible on smaller screens. */
+@media(max-width:760px){
+  .story-content{padding:90px 44px 101px 26px}
+  .story-kicker{font-size:10px;margin-bottom:17px}
+  .story-title{font-size:clamp(31px,8.2vw,43px);margin-bottom:16px;line-height:1.14}
+  .story-hook{font-size:clamp(18px,4.6vw,21px);margin-bottom:12px;line-height:1.42}
+  .story-body{font-size:clamp(13px,3.45vw,16px);line-height:1.58;margin-bottom:14px}
+  .story-reveal{font-size:clamp(15px,3.8vw,19px);margin-bottom:11px;padding:8px 12px 8px 0}
+  .story-connection{font-size:10px;line-height:1.45;margin-bottom:9px}
+  .story-source{margin-top:2px;gap:9px 10px}
+  .story-source-meta{font-size:11px}.story-source-meta small{font-size:9px}
+  .source-pill{font-size:10px;padding:9px 11px}
+  .story-editorial{margin-top:10px;font-size:10px}
+  .story-light-scape{inset:-35%}
+  .story-geometry{width:135vw;top:20%;inset-inline-start:-26%;opacity:.7}
+  .story-orbit{width:118vw;inset-inline-start:-29%;opacity:.37}
+  .story-orbit--b{width:70vw;inset-inline-start:-11%}
+  .story-glyph{font-size:64vw;opacity:.11;inset-inline-start:-2%;top:44%}
+  .framework-content{padding:85px 37px 103px}
+  .framework-title{font-size:clamp(30px,7.3vw,42px);margin-bottom:10px}
+  .framework-hook{font-size:15px;margin-bottom:16px}
+  .framework-components{gap:4px;margin-bottom:13px}
+  .framework-component{gap:8px}
+  .framework-symbol{width:clamp(54px,16vw,70px);font-size:28px}
+  .framework-component small{font-size:11px}
+  .framework-info{min-height:83px;padding:11px 15px}
+  .framework-definition{font-size:12px}
+  .framework-motion{font-size:clamp(15px,4.4vw,21px);margin-top:14px}
+  .framework-insight{font-size:11px;line-height:1.47;margin-bottom:11px}
+  .reel-navigation{gap:7px}.reel-current{font-size:10px}.reel-directory-button{font-size:10px;padding:8px 10px}
+  .directory-dialog{padding:20px 17px}
+  .directory-item{grid-template-columns:28px minmax(0,1fr);gap:6px 10px}
+  .directory-item small{grid-column:2;justify-self:start}
+}
+@media(max-width:390px){
+  .story-content{padding:81px 42px 104px 24px}
+  .story-title{font-size:30px;margin-bottom:12px}
+  .story-body{font-size:12.5px;line-height:1.52}
+  .story-hook{font-size:17px;margin-bottom:10px}
+  .story-reveal{font-size:15px;padding-top:7px;padding-bottom:7px}
+  .framework-title{font-size:31px}
+  .framework-symbol{width:54px;height:54px}
+  .framework-content{padding-left:30px;padding-right:30px}
+}
+@media(prefers-reduced-motion:reduce){.story-light-scape,.story-geometry,.story-orbit,.framework-halo,.reel-story.is-active .story-title,.reel-story.is-active .story-hook,.reel-story.is-active .story-body,.reel-story.is-active .story-reveal,.reel-story.is-active .story-source{animation:none!important}}
+/* Override the grid display when filtering the scalable directory. */
+.directory-item[hidden]{display:none!important}
+/* Slightly richer, luminous backgrounds on mobile without competing with text. */
+.story-light-scape{filter:saturate(1.5) brightness(1.22)}
+.story-geometry{opacity:.92}
+.story-glyph{opacity:.18}
+@media(max-width:760px){.story-glyph{opacity:.17}.story-geometry{opacity:.85}}
+
+/* Offscreen reel content may be skipped by the browser for 100+ reel feeds. */
+.reel-story .story-reel,.reel-framework .framework-visual{content-visibility:auto;contain-intrinsic-size:auto 100svh}
+
+/* V6 — BOOKS SPEAK: the verified excerpt is the visual focal point;
+   the answer and its relation to ZUGA live inside the reel itself. */
+.story-content--quote{width:min(100%,1150px);gap:0;padding-top:89px;padding-bottom:105px;max-height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#5374ad44 transparent}
+.story-content--quote .story-kicker{margin-bottom:12px}
+.story-content--quote .story-title{font-size:clamp(38px,4.8vw,72px);margin-bottom:10px;line-height:1.09;max-width:1030px}
+.story-content--quote .story-hook{font-size:clamp(17px,1.9vw,25px);margin:0 0 17px;color:#d6e6fa;font-weight:520;line-height:1.38}
+.story-quotation{position:relative;width:min(100%,810px);padding:17px 29px 18px 24px;margin:0 0 18px;border-inline-start:3px solid var(--scene-edge);border-radius:19px 5px 5px 19px;background:linear-gradient(105deg,rgba(11,22,45,.84),color-mix(in srgb,var(--scene-edge) 13%,rgba(11,20,43,.74)) 65%,rgba(9,17,39,.85));box-shadow:0 0 40px color-mix(in srgb,var(--scene-edge) 15%,transparent),inset 0 0 35px rgba(10,21,44,.26);backdrop-filter:blur(17px)}
+.story-quotation:before{content:'“';position:absolute;inset-inline-end:22px;top:-19px;font:700 86px/1 Georgia,serif;color:var(--scene-edge);opacity:.3;pointer-events:none}
+.story-quotation blockquote{margin:0;padding:0;font-size:clamp(25px,3.15vw,45px);font-weight:720;line-height:1.19;letter-spacing:-.03em;color:#f9fcff;text-shadow:0 0 28px color-mix(in srgb,var(--scene-edge) 32%,transparent);text-wrap:pretty}
+.story-quotation figcaption{margin-top:10px;font-size:clamp(10px,1vw,12px);font-weight:520;color:#acc2dd;line-height:1.35}
+.story-answer{width:min(100%,825px);margin:0 0 11px}
+.story-answer>span,.story-connection>span{display:inline-flex;align-items:center;gap:7px;color:var(--scene-edge);font-size:11px;font-weight:740;letter-spacing:.06em;margin-bottom:6px}
+.story-answer>span:before{content:'';display:inline-block;width:18px;height:1px;background:var(--scene-edge)}
+.story-answer p{font-size:clamp(16px,1.55vw,20px);color:#f1f6ff;line-height:1.58;margin:0;font-weight:470;text-wrap:pretty}
+.story-connection{border:0;padding:0;margin:0 0 10px;background:none;color:#b8c8e1;max-width:790px}
+.story-connection p{color:#aec6e6;font-size:clamp(13px,1.17vw,16px);line-height:1.48;margin:0}
+.story-content--quote .story-source{margin-top:4px;gap:7px 12px}
+.story-content--quote .story-source-meta{font-size:11px}
+.story-content--quote .story-source-meta small{font-size:10px}
+.story-content--quote .source-pill{padding:8px 12px;font-size:10px}
+.story-content--quote .story-editorial{margin-top:6px;font-size:10px}
+.reel-story.is-active .story-quotation{animation:story-title-in .9s .08s both}
+.reel-story.is-active .story-answer{animation:story-rise .8s .28s both}
+.reel-story.is-active .story-connection{animation:story-rise .8s .42s both}
+.framework-source-quote{margin:0 0 13px;padding:8px 20px;background:rgba(8,21,49,.58);border:1px solid #80b7e855;border-radius:14px;box-shadow:0 0 26px rgba(80,154,255,.09)}
+.framework-source-quote blockquote{margin:0;color:#ecf8ff;font-size:clamp(19px,2vw,25px);font-weight:650;line-height:1.2}
+.framework-source-quote figcaption{margin-top:3px;font-size:10px;color:#a2c2eb}
+@media(max-width:760px){
+ .story-content--quote{padding:82px 42px 84px 25px;max-height:100dvh;justify-content:center}
+ .story-content--quote .story-title{font-size:clamp(30px,7vw,42px);line-height:1.08;margin-bottom:9px}
+ .story-content--quote .story-kicker{font-size:10px;margin-bottom:11px}
+ .story-content--quote .story-hook{font-size:14px;margin-bottom:12px;line-height:1.34}
+ .story-quotation{padding:13px 16px;margin-bottom:12px;border-radius:15px 3px 3px 15px}
+ .story-quotation blockquote{font-size:clamp(22px,6.2vw,34px);line-height:1.18}
+ .story-quotation figcaption{margin-top:7px;font-size:10px}
+ .story-quotation:before{font-size:57px;top:-10px;inset-inline-end:12px}
+ .story-answer{margin-bottom:8px}
+ .story-answer>span,.story-connection>span{font-size:9px;margin-bottom:4px}
+ .story-answer p{font-size:clamp(13px,3.75vw,16px);line-height:1.5}
+ .story-connection p{font-size:clamp(11px,3vw,14px);line-height:1.4}
+ .story-connection{margin-bottom:7px}
+ .story-content--quote .story-source{margin-top:4px}
+ .story-content--quote .story-source-meta{font-size:10px}
+ .story-content--quote .story-source-meta small{font-size:9px}
+ .story-content--quote .source-pill{font-size:9px;padding:7px 10px}
+ .framework-source-quote{padding:7px 11px;margin-bottom:9px}
+ .framework-source-quote blockquote{font-size:16px}
+ .framework-source-quote figcaption{font-size:9px}
+ .framework-content{padding-top:86px;padding-bottom:98px}
+}
+@media(max-width:420px){
+ .story-content--quote{padding:81px 42px 83px 20px}
+ .story-content--quote .story-title{font-size:clamp(29px,7vw,34px)}
+ .story-quotation blockquote{font-size:clamp(21px,5.7vw,27px)}
+ .story-answer p{font-size:13.3px;line-height:1.43}
+ .story-connection p{font-size:11.4px}
+ .story-content--quote .story-hook{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.reel-story.is-active .story-quotation,.reel-story.is-active .story-answer,.reel-story.is-active .story-connection{animation:none!important}}
+
+/* V7: prevent long quote panels from trapping the next-reel swipe. */
+.story-content--quote{overscroll-behavior-y:auto;touch-action:pan-y}

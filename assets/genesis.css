@@ -1,0 +1,134 @@
+/* GENESIS — immersive, fully-interactive cosmic graph within the second reel */
+.reel-genesis{background:radial-gradient(ellipse 90% 68% at 50% 47%,#12274a 0%,#080d21 53%,#030510 100%);isolation:isolate}
+.reel-genesis:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 30% 35% at 26% 38%,#dfae6d20,transparent 90%),radial-gradient(ellipse 32% 38% at 75% 64%,#3675ef31,transparent 89%),radial-gradient(ellipse 45% 45% at 50% 55%,#7464b018,transparent 85%)}
+.reel-genesis .scene-visual,.reel-genesis .scene-sweep,.reel-genesis .noise{pointer-events:none}
+.genesis-frame{position:absolute;inset:0;z-index:5;overflow:hidden;background:radial-gradient(circle at 26% 31%,#7c3d2320,transparent 25%),radial-gradient(circle at 76% 54%,#3b73af19,transparent 34%)}
+.genesis-frame:before{content:"";position:absolute;inset:-35%;pointer-events:none;background:conic-gradient(from 20deg at 48% 50%,transparent 0deg,#4374c80b 80deg,transparent 130deg,#e2b6740b 210deg,transparent 275deg);animation:genesis-aura 38s linear infinite;opacity:.85}
+.genesis-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#050918de 0%,transparent 16%,transparent 78%,#030713da 100%);pointer-events:none;z-index:1}
+.genesis-stars{position:absolute;inset:0;pointer-events:none;opacity:.9;background-image:radial-gradient(circle at 21% 12%,#b5c9ff 0 .9px,transparent 1.8px),radial-gradient(circle at 76% 22%,#f5cf98 0 1.2px,transparent 2px),radial-gradient(circle at 48% 60%,#bedcff 0 1px,transparent 2px),radial-gradient(circle at 88% 75%,#fff 0 1px,transparent 2px),radial-gradient(circle at 13% 84%,#78c8ff 0 1px,transparent 2px);background-size:300px 290px,360px 400px,270px 350px,420px 460px,240px 240px;animation:genesis-sky 20s ease-in-out infinite alternate}
+.genesis-topline{position:absolute;z-index:5;top:clamp(73px,10dvh,105px);left:clamp(20px,7vw,110px);right:clamp(20px,7vw,110px);display:flex;align-items:center;justify-content:space-between;direction:ltr;pointer-events:none}
+.genesis-eyebrow{font:700 11px/1.5 "Space Grotesk",Arial,sans-serif;letter-spacing:.32em;color:#d1e7ff8c;text-shadow:0 0 18px #8ccdff}
+.genesis-reset{pointer-events:auto;background:#060e22a0;border:1px solid #9fbfea44;border-radius:999px;color:#b9cee7;padding:9px 14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font:500 12px/1.4 "Heebo",Arial,sans-serif;transition:background .2s,border-color .2s,transform .2s}
+.genesis-reset:hover{background:#15294cb9;border-color:#bbe3ff88;transform:scale(1.035)}
+.genesis-stage{position:absolute;z-index:3;inset:clamp(78px,10dvh,104px) 5% clamp(92px,11dvh,124px);display:flex;align-items:center;justify-content:center;touch-action:pan-y}
+.genesis-universe{width:100%;height:100%;max-height:100%;overflow:visible;direction:ltr;filter:drop-shadow(0 0 18px #2d85ec1a)}
+.genesis-network{pointer-events:none}
+.genesis-trace{fill:none;stroke:url(#genesis-line);stroke-width:2.1;opacity:.58;filter:drop-shadow(0 0 6px #73c2ff88);stroke-linecap:round;animation:genesis-link-breathe 3.7s ease-in-out infinite alternate}
+.genesis-science-line{stroke-width:1.45;opacity:.35}
+.genesis-done-line{stroke-width:2.4;stroke-dasharray:5 12;stroke:#93c9f1;opacity:.58}
+.genesis-charge{cursor:pointer;outline:none}
+.genesis-charge-glow{fill:none;stroke:#83d9ff;stroke-width:15;opacity:.23;filter:blur(5px);pointer-events:none;animation:genesis-link-breathe 1.3s ease-in-out infinite alternate}
+.genesis-charge-line{fill:none;stroke:#e0e9ff;stroke-width:3.8;stroke-linecap:round;stroke-dasharray:11 8;pointer-events:none;filter:drop-shadow(0 0 9px #b6ddff);animation:genesis-flow 1.05s linear infinite}
+.genesis-charge-hit{fill:none;stroke:transparent;stroke-width:55;pointer-events:stroke}
+.genesis-charge-pulse{fill:none;stroke:#b7e8ffb5;stroke-width:2.8;opacity:.75;pointer-events:none;animation:genesis-pulse 1.9s ease-in-out infinite}
+.genesis-charge-center{fill:#192a57;stroke:#f5f5e5;stroke-width:1.7;pointer-events:none;filter:drop-shadow(0 0 16px #a5e1ffb5)}
+.genesis-tau{font:600 21px "Space Grotesk",Arial,sans-serif;fill:#fff;pointer-events:none}
+.genesis-done-tau{font:600 22px "Space Grotesk",Arial,sans-serif;fill:#bad0e7}
+.genesis-charge:hover .genesis-charge-center,.genesis-charge:focus .genesis-charge-center{fill:#3576c6}
+.genesis-charge:focus-visible{outline:none}.genesis-charge:focus-visible .genesis-charge-pulse{stroke:#fff;stroke-width:5}
+.genesis-node{outline:none;isolation:isolate}
+.genesis-node--clickable{cursor:pointer}
+.genesis-node-hit{fill:transparent;pointer-events:all}.genesis-node-glow{fill:#81beff;opacity:.13;filter:url(#genesis-light)}
+.genesis-node--gold .genesis-node-glow,.genesis-node--amber .genesis-node-glow{fill:#f4bf66;opacity:.27}
+.genesis-node--human .genesis-node-glow{fill:#fff5bb;opacity:.28}
+.genesis-node-orbit{fill:none;stroke:#9bdcff;stroke-width:1;stroke-dasharray:2 7;opacity:.47}
+.genesis-node--gold .genesis-node-orbit{stroke:#ffd997;opacity:.92}
+.genesis-node--pending .genesis-node-orbit{stroke-dasharray:5 8;opacity:.38}
+.genesis-node-shell{stroke:#f2faff9e;stroke-width:1.7;filter:drop-shadow(0 0 13px #85bfff5c)}
+.genesis-node--gold .genesis-node-shell{stroke:#ffe6a8e5;filter:drop-shadow(0 0 25px #e8b767aa)}
+.genesis-node--pending .genesis-node-shell{stroke:#a3b4c97d;stroke-dasharray:5 5;opacity:.64}
+.genesis-node-shine{fill:#fff;opacity:.27;filter:blur(10px);pointer-events:none}
+.genesis-node-ring{fill:none;stroke:#e8f4ff80;stroke-width:1.3;opacity:.45;pointer-events:none}
+.genesis-node--gold .genesis-node-ring{stroke:#e9d099;opacity:.68}
+.genesis-node-label{fill:white;font:600 23px "Heebo",Arial,sans-serif;paint-order:stroke;stroke:#0c173c44;stroke-width:.75px;pointer-events:none;filter:drop-shadow(0 2px 6px #0009)}
+.genesis-node-label--god{font-weight:700;letter-spacing:.01em}
+.genesis-node-label--pending{fill:#d5e1f2;font-family:"Space Grotesk",sans-serif}
+.genesis-node--clickable:hover .genesis-node-shell{stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 25px #b6ddffcc)}
+.genesis-node--clickable:focus-visible .genesis-node-orbit{stroke:#fff;stroke-width:3}
+.genesis-node--gold .genesis-node-glow{animation:genesis-god-breathe 4s ease-in-out infinite alternate}.genesis-node--gold .genesis-node-visual{animation:genesis-god-float 5s ease-in-out infinite alternate}
+.genesis-node--appear{animation:genesis-pop .75s cubic-bezier(.12,.82,.2,1.35) both}
+.genesis-root-instruction{pointer-events:none;fill:none;opacity:.92;animation:genesis-root-hint 2.4s ease-in-out infinite alternate}.genesis-root-instruction text{font:600 19px "Heebo",Arial,sans-serif;fill:#d7e7ff;paint-order:stroke;stroke:#05102188;stroke-width:1}.genesis-root-arrow{fill:none;stroke:#d7dfef;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 9px #abdbff)}.genesis-caption{position:absolute;z-index:5;bottom:clamp(87px,10dvh,119px);left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:11px;white-space:normal;width:max-content;max-width:min(72vw,590px);padding:12px 22px;background:linear-gradient(115deg,#101d39db,#182a46b5);border:1px solid #8ccaff65;border-radius:999px;box-shadow:0 10px 40px #0008,0 0 30px #9bdaff18;backdrop-filter:blur(12px);text-align:center;color:#eff9ff;font:600 clamp(11px,1.15vw,14px)/1.45 "Heebo",Arial,sans-serif;pointer-events:none}
+.genesis-caption-arrow{font:800 23px/1 "Space Grotesk",Arial,sans-serif;color:#ffd99c;transform:rotate(60deg);animation:genesis-point 1.4s ease-in-out infinite}
+.genesis-meaning{position:absolute;z-index:6;bottom:clamp(23px,3.2dvh,34px);left:clamp(18px,5vw,75px);direction:rtl;text-align:right;max-width:min(440px,78vw);font-family:"Heebo",Arial,sans-serif}
+.genesis-meaning summary{cursor:pointer;display:inline-block;list-style:none;border-radius:22px;border:1px solid #a9c1e252;background:#0a1429d9;color:#d4e7fc;padding:7px 12px;font-size:11px;backdrop-filter:blur(8px)}
+.genesis-meaning summary::-webkit-details-marker{display:none}
+.genesis-meaning[open] .genesis-meaning-copy{position:absolute;left:0;bottom:41px;width:min(420px,82vw);max-height:50dvh;overflow:auto;background:#0a1325f2;border:1px solid #90cafe69;border-radius:18px;padding:17px 20px;box-shadow:0 18px 70px #000c;backdrop-filter:blur(14px)}
+.genesis-meaning-copy h1,.genesis-meaning-copy h2{font-size:17px;margin:0 0 6px;color:#fff}
+.genesis-meaning-copy p,.genesis-meaning-copy li{font-size:12px;line-height:1.7;color:#ccd8ec}
+.genesis-meaning-copy ol{padding-right:18px}
+@keyframes genesis-root-hint{to{opacity:.5}}
+@keyframes genesis-aura{to{transform:rotate(360deg)}}
+@keyframes genesis-sky{to{opacity:.5;transform:scale(1.03) translateX(-9px)}}
+@keyframes genesis-link-breathe{to{opacity:.9;stroke-width:3.6}}
+@keyframes genesis-flow{to{stroke-dashoffset:-38}}
+@keyframes genesis-pulse{50%{opacity:.20;stroke-width:1.2}}
+@keyframes genesis-god-breathe{to{opacity:.45}}
+@keyframes genesis-god-float{to{transform:translateY(-9px)}}
+@keyframes genesis-pop{0%{opacity:0;scale:.15;filter:blur(10px)}75%{opacity:1;scale:1.07;filter:blur(0)}100%{scale:1;opacity:1}}
+@keyframes genesis-point{50%{transform:rotate(60deg) translateX(5px)}}
+@media(max-width:760px){
+  .genesis-topline{top:78px;left:19px;right:20px}
+  .genesis-eyebrow{font-size:9px;letter-spacing:.21em}
+  .genesis-reset{font-size:10px;padding:7px 9px;gap:4px}
+  .genesis-reset span{display:none}
+  .genesis-stage{inset:110px 2% 123px}
+  .genesis-caption{bottom:89px;max-width:calc(100vw - 142px);padding:9px 13px;font-size:11px;min-height:38px}
+  .genesis-caption-arrow{font-size:18px}.genesis-root-instruction text{font-size:20px}
+  .genesis-meaning{bottom:19px;left:17px}
+  .genesis-meaning[open] .genesis-meaning-copy{max-height:60dvh}
+  .genesis-node--clickable .genesis-node-shell{stroke-width:2.3}
+}
+@media(max-width:380px){.genesis-caption{font-size:10px;bottom:78px;max-width:72vw}.genesis-stage{inset:104px 0 124px}}
+@media(prefers-reduced-motion:reduce){.genesis-frame:before,.genesis-stars,.genesis-root-instruction,.genesis-node--gold .genesis-node-glow,.genesis-node--gold .genesis-node-visual,.genesis-node--appear,.genesis-charge-line,.genesis-charge-pulse,.genesis-trace,.genesis-caption-arrow{animation:none!important}}
+
+/* --- V4 refinement: more game-like motion, stronger tension flow, lighter info panel --- */
+.genesis-frame{background:
+  radial-gradient(circle at 50% 14%,rgba(157,208,255,.13),transparent 36%),
+  radial-gradient(circle at 18% 25%,rgba(255,194,108,.12),transparent 24%),
+  radial-gradient(circle at 82% 28%,rgba(112,155,255,.12),transparent 26%),
+  linear-gradient(180deg,#02050d,#071124 46%,#050811 100%)}
+.genesis-frame:before{opacity:.85;animation-duration:11s}
+.genesis-stage{inset:112px 3% 116px}
+.genesis-caption{backdrop-filter:blur(18px);box-shadow:0 10px 44px #000a,0 0 34px rgba(155,218,255,.17)}
+.genesis-meaning summary{background:#081325eb;border-color:#89baf260;color:#e3f1ff}
+.genesis-meaning[open] .genesis-meaning-copy{background:#07111ff5;border-color:#80c0ff74;max-width:min(460px,82vw)}
+.genesis-trace-halo{fill:none;stroke:#88d8ff;stroke-width:10;opacity:.12;filter:blur(4px);pointer-events:none}
+.genesis-trace{stroke-width:2.45;opacity:.8;animation:genesis-link-breathe 2.2s ease-in-out infinite alternate}
+.genesis-flow-trace{fill:none;stroke:#ecf5ff;stroke-width:1.55;stroke-dasharray:1 22;stroke-linecap:round;opacity:.9;filter:drop-shadow(0 0 10px rgba(192,233,255,.85));animation:genesis-stream 2.5s linear infinite;pointer-events:none}
+.genesis-science-line{stroke-width:1.55;opacity:.48}.genesis-science-line + .genesis-flow-trace{opacity:.58;stroke-width:1.1}
+.genesis-done-line{stroke:#a3d3ff;stroke-width:2.75;stroke-dasharray:7 12;opacity:.7}.genesis-done-line + .genesis-flow-trace{opacity:.72}
+.genesis-charge-glow{stroke-width:18;opacity:.30;filter:blur(6px);animation:genesis-link-breathe 1.05s ease-in-out infinite alternate}
+.genesis-charge-line{stroke-width:4.2;stroke-dasharray:11 10;animation:genesis-flow .95s linear infinite}
+.genesis-charge-pulse{stroke-width:3.4;animation:genesis-pulse 1.4s ease-in-out infinite}
+.genesis-charge-center{fill:#102453;stroke:#fffdf1;stroke-width:2;filter:drop-shadow(0 0 20px rgba(165,225,255,.9))}
+.genesis-charge:hover .genesis-charge-center,.genesis-charge:focus .genesis-charge-center{fill:#2d6cd1}
+.genesis-charge--done{cursor:default}.genesis-charge--done .genesis-charge-line{animation:none;opacity:.45;stroke-dasharray:4 11}.genesis-charge--done .genesis-charge-pulse{animation:none;opacity:.25}
+.genesis-node-visual{animation:genesis-node-bob 5.6s ease-in-out infinite;animation-delay:var(--float-delay,0s)}
+.genesis-node-shell{stroke-width:1.8;filter:drop-shadow(0 0 16px rgba(133,191,255,.52))}
+.genesis-node--clickable:hover .genesis-node-shell,.genesis-node--clickable:focus-visible .genesis-node-shell{stroke-width:3.3;filter:drop-shadow(0 0 30px rgba(182,221,255,.93))}
+.genesis-node-label{font-weight:600;stroke:#071434a0;stroke-width:1px}
+.genesis-node-label--god{font-weight:700}
+.genesis-node--appear .genesis-node-visual{animation:genesis-born .84s cubic-bezier(.18,.92,.22,1.18) both, genesis-node-bob 5.6s ease-in-out infinite .85s}
+.genesis-root-instruction text{font-size:20px}
+@keyframes genesis-stream{from{stroke-dashoffset:0}to{stroke-dashoffset:-160}}
+@keyframes genesis-node-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(calc(var(--float-shift,12px)*-1))}}
+@keyframes genesis-born{0%{opacity:0;transform:translateY(-18px) scale(.16);filter:blur(18px)}35%{opacity:1;transform:translateY(0) scale(1.12);filter:blur(0)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:760px){
+  .genesis-stage{inset:110px 1% 118px}
+  .genesis-caption{bottom:92px;max-width:calc(100vw - 138px)}
+  .genesis-meaning[open] .genesis-meaning-copy{max-width:min(86vw,420px)}
+}
+@media(prefers-reduced-motion:reduce){.genesis-flow-trace,.genesis-node-visual{animation:none!important}}
+
+/* V6.1 — Keep every Genesis instruction out of the active diagram. */
+.genesis-root-instruction .genesis-root-label{font-family:"Heebo",Arial,sans-serif;font-size:17px;fill:#e7efff;paint-order:stroke;stroke:#071327;stroke-width:1px;filter:drop-shadow(0 2px 6px #061124);}
+.genesis-root-arrow,.genesis-root-arrow-head{stroke:#e8d1a4;stroke-width:2.1;stroke-linejoin:round;fill:none;filter:drop-shadow(0 0 8px rgba(242,217,159,.5))}
+.genesis-stage{bottom:142px;}
+.genesis-caption{bottom:79px;max-width:min(76vw,640px);z-index:8;}
+@media(max-width:760px){.genesis-stage{bottom:144px}.genesis-caption{bottom:83px;max-width:calc(100vw - 126px);padding:9px 12px;font-size:11px}.genesis-root-instruction .genesis-root-label{font-size:19px}}
+@media(max-width:380px){.genesis-stage{bottom:141px}.genesis-caption{bottom:80px;max-width:calc(100vw - 112px);font-size:10px}}
+
+/* V7: reliable, high-priority finger/mouse target for generating elements. */
+.genesis-charge-touch-target{fill:transparent;stroke:none;pointer-events:all;cursor:pointer}
+.genesis-charge:focus-visible .genesis-charge-center{stroke:#fff;stroke-width:4}
+.genesis-stage{touch-action:pan-y}
