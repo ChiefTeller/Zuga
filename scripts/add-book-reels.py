@@ -80,7 +80,7 @@ for r in rows:
  orig_main=re.search(r'<main[^>]*>',body).group(0)
  tail=tail.replace('<main id="main" class="single-reel">',orig_main,1)
  p=ROOT/'reels'/slug/'index.html';p.parent.mkdir(exist_ok=True)
- p.write_text('<!doctype html><html lang="he" dir="rtl"><head>'+h+'</head><body>'+common(body_before+tail)+'</body></html>')
+ p.write_text('<!doctype html><html lang="he" dir="rtl" class="detail"><head>'+h+'</head><body>'+common(body_before+tail)+'</body></html>')
 (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('<url><loc>'+BASE+path+'</loc></url>\n' for path in ['/']+['/reels/'+s+'/' for s in order])+'</urlset>\n')
 p=ROOT/'llms.txt';text=p.read_text().split('\n## Book excerpts — V8')[0]
 text+='\n## Book excerpts — V8\n\n34 additional source-grounded reels. Quoted excerpts are separate from editorial explanations. Humanity reels use prose, without formal notation.\n\n'
