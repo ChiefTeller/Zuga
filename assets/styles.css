@@ -24,11 +24,11 @@
    ZUGA REELS V2 — cinematic content, responsive reading and engagement
    ===================================================================== */
 .reel { --tone:#94dfff; --scene: none; }
-.reel--is-there-god {--scene:url('/assets/scenes/god.svg');--tone:#f3cb95}
-.reel--free-will {--scene:url('/assets/scenes/choice.svg');--tone:#c9abff}
-.reel--divine-equation {--scene:url('/assets/scenes/equation.svg');--tone:#90ebff}
-.reel--first-principle {--scene:url('/assets/scenes/duality.svg');--tone:#b4ecff}
-.reel--tellerbp-library {--scene:url('/assets/scenes/library.svg');--tone:#e8c18a}
+.reel--is-there-god {--scene:url('/Zuga/assets/scenes/god.svg');--tone:#f3cb95}
+.reel--free-will {--scene:url('/Zuga/assets/scenes/choice.svg');--tone:#c9abff}
+.reel--divine-equation {--scene:url('/Zuga/assets/scenes/equation.svg');--tone:#90ebff}
+.reel--first-principle {--scene:url('/Zuga/assets/scenes/duality.svg');--tone:#b4ecff}
+.reel--tellerbp-library {--scene:url('/Zuga/assets/scenes/library.svg');--tone:#e8c18a}
 .scene-visual{position:absolute;inset:-3%;z-index:0;pointer-events:none;background-image:var(--scene);background-size:cover;background-position:center center;opacity:.98;transform:scale(1.035);will-change:transform}
 .reel-excerpt .scene-visual,.reel-link .scene-visual{mask-image:linear-gradient(to bottom,black 0%,black 100%)}
 .reel-excerpt:before,.reel-link:before{z-index:1;background:linear-gradient(105deg,rgba(2,5,16,.42) 0%,rgba(4,7,17,.23) 60%,rgba(4,7,17,.12) 100%),radial-gradient(circle at 50% 95%,rgba(0,0,0,.75),transparent 65%)}
